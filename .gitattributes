@@ -1,0 +1,14 @@
+# Forcer la détection correcte des langages
+*.php linguist-language=PHP
+*.js linguist-language=JavaScript
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+
+# Exclure les dépendances des statistiques
+vendor/* linguist-vendored
+node_modules/* linguist-vendored
+
+# Spécifier le type de fichiers
+*.js text
+*.css text
+*.html text
