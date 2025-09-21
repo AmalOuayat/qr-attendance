@@ -1,0 +1,231 @@
+[17-May-2025 23:23:28 UTC] 2025-05-17 23:23:28 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[17-May-2025 23:23:28 UTC] 2025-05-17 23:23:28 - Traitement d'une requête GET
+[17-May-2025 23:23:28 UTC] 2025-05-17 23:23:28 - Retour de toutes les données
+[17-May-2025 23:23:28 UTC] 2025-05-17 23:23:28 - Connexion fermée
+
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Données POST reçues: {"jour":"Samedi","creneau":"11h00-13h30","id_module":"2","id_groupe":"1","id_formateur":"2","id_salle":"2","frequence":"paire","id":""}
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Traitement d'une requête POST
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Action d'ajout demandée
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Début de la fonction addSeance avec les données: {"jour":"Samedi","creneau":"11h00-13h30","id_module":"2","id_groupe":"1","id_formateur":"2","id_salle":"2","frequence":"paire","id":""}
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Données validées: jour=Samedi, creneau=11h00-13h30, module=2, groupe=1, formateur=2, salle=2
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Début de la transaction
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Vérification du cours existant: SELECT id FROM cours WHERE id_module = 2 AND id_groupe = 1
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Création d'un nouveau cours: INSERT INTO cours (date_time, id_module, id_groupe, id_salle, id_filiere, id_formateur) 
+                         VALUES (NOW(), 2, 1, 2, 
+                         (SELECT id_filiere FROM module WHERE id = 2 LIMIT 1), 2)
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Nouveau cours créé avec ID: 5
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Dates calculées: debut=2025-05-17 11:00:00, fin=2025-05-17 13:30:00
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Création d'une nouvelle séance: INSERT INTO seance (date_debut, date_fin, id_cours, id_salle, id_formateur, id_groupe, status) 
+                      VALUES ('2025-05-17 11:00:00', '2025-05-17 13:30:00', 5, 2, 2, 1, 'Planifiée')
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Nouvelle séance créée avec ID: 26
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Ajout à l'emploi du temps: INSERT INTO emploi_du_temps (jour, creneau, id_module, id_formateur, id_salle, id_groupe, id_seance) 
+                VALUES ('Samedi', '11h00-13h30', 2, 2, 2, 1, 26)
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Commit de la transaction
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Séance ajoutée avec succès
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Connexion fermée
+
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Traitement d'une requête GET
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Retour des données d'emploi du temps uniquement
+[17-May-2025 23:23:51 UTC] 2025-05-17 23:23:51 - Connexion fermée
+
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Données POST reçues: {"jour":"Mardi","creneau":"8h30-11h00","id_module":"5","id_groupe":"1","id_formateur":"3","id_salle":"3","frequence":"paire","id":""}
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Traitement d'une requête POST
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Action d'ajout demandée
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Début de la fonction addSeance avec les données: {"jour":"Mardi","creneau":"8h30-11h00","id_module":"5","id_groupe":"1","id_formateur":"3","id_salle":"3","frequence":"paire","id":""}
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Données validées: jour=Mardi, creneau=8h30-11h00, module=5, groupe=1, formateur=3, salle=3
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Début de la transaction
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Vérification du cours existant: SELECT id FROM cours WHERE id_module = 5 AND id_groupe = 1
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Cours existant trouvé avec ID: 3
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Dates calculées: debut=2025-05-20 08:30:00, fin=2025-05-20 11:00:00
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Création d'une nouvelle séance: INSERT INTO seance (date_debut, date_fin, id_cours, id_salle, id_formateur, id_groupe, status) 
+                      VALUES ('2025-05-20 08:30:00', '2025-05-20 11:00:00', 3, 3, 3, 1, 'Planifiée')
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Nouvelle séance créée avec ID: 27
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Ajout à l'emploi du temps: INSERT INTO emploi_du_temps (jour, creneau, id_module, id_formateur, id_salle, id_groupe, id_seance) 
+                VALUES ('Mardi', '8h30-11h00', 5, 3, 3, 1, 27)
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Commit de la transaction
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Séance ajoutée avec succès
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Connexion fermée
+
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Traitement d'une requête GET
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Retour des données d'emploi du temps uniquement
+[17-May-2025 23:25:03 UTC] 2025-05-17 23:25:03 - Connexion fermée
+
+[18-May-2025 00:22:45 UTC] 2025-05-18 00:22:45 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 00:22:45 UTC] 2025-05-18 00:22:45 - Traitement d'une requête GET
+[18-May-2025 00:22:45 UTC] 2025-05-18 00:22:45 - Retour de toutes les données
+[18-May-2025 00:22:45 UTC] 2025-05-18 00:22:45 - Connexion fermée
+
+[18-May-2025 00:22:49 UTC] 2025-05-18 00:22:49 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 00:22:49 UTC] 2025-05-18 00:22:49 - Traitement d'une requête GET
+[18-May-2025 00:22:49 UTC] 2025-05-18 00:22:49 - Retour de toutes les données
+[18-May-2025 00:22:49 UTC] 2025-05-18 00:22:49 - Connexion fermée
+
+[18-May-2025 19:16:47 UTC] 2025-05-18 19:16:47 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 19:16:47 UTC] 2025-05-18 19:16:47 - Traitement d'une requête GET
+[18-May-2025 19:16:47 UTC] 2025-05-18 19:16:47 - Retour de toutes les données
+[18-May-2025 19:16:47 UTC] 2025-05-18 19:16:47 - Connexion fermée
+
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Données POST reçues: {"jour":"Lundi","creneau":"8h30-11h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"1","frequence":"paire","id":""}
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Traitement d'une requête POST
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Action d'ajout demandée
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Début de la fonction addSeance avec les données: {"jour":"Lundi","creneau":"8h30-11h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"1","frequence":"paire","id":""}
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Données validées: jour=Lundi, creneau=8h30-11h00, module=1, groupe=1, formateur=1, salle=1
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - La salle est déjà occupée à ce créneau
+[18-May-2025 19:17:20 UTC] 2025-05-18 19:17:20 - Connexion fermée
+
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Données POST reçues: {"jour":"Lundi","creneau":"8h30-11h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"2","frequence":"paire","id":""}
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Traitement d'une requête POST
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Action d'ajout demandée
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Début de la fonction addSeance avec les données: {"jour":"Lundi","creneau":"8h30-11h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"2","frequence":"paire","id":""}
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Données validées: jour=Lundi, creneau=8h30-11h00, module=1, groupe=1, formateur=1, salle=2
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Le formateur est déjà occupé à ce créneau
+[18-May-2025 19:17:29 UTC] 2025-05-18 19:17:29 - Connexion fermée
+
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Données POST reçues: {"id":"14","action":"delete"}
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Traitement d'une requête POST
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Action de suppression demandée pour l'ID: 14
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Début de la fonction deleteSeance avec ID: 14
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Début de la transaction pour suppression
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Récupération de la séance: SELECT id_seance FROM emploi_du_temps WHERE id = 14
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Séance trouvée avec ID: 1
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Suppression de l'emploi du temps: DELETE FROM emploi_du_temps WHERE id = 14
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Vérification des références: SELECT COUNT(*) AS count FROM emploi_du_temps WHERE id_seance = 1
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Suppression de la séance: DELETE FROM seance WHERE id = 1
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Séance supprimée avec succès
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Commit de la transaction pour suppression
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Connexion fermée
+
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Traitement d'une requête GET
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Retour des données d'emploi du temps uniquement
+[18-May-2025 19:17:40 UTC] 2025-05-18 19:17:40 - Connexion fermée
+
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Données POST reçues: {"jour":"Lundi","creneau":"8h30-11h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"1","frequence":"paire","id":""}
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Traitement d'une requête POST
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Action d'ajout demandée
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Début de la fonction addSeance avec les données: {"jour":"Lundi","creneau":"8h30-11h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"1","frequence":"paire","id":""}
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Données validées: jour=Lundi, creneau=8h30-11h00, module=1, groupe=1, formateur=1, salle=1
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Début de la transaction
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Vérification du cours existant: SELECT id FROM cours WHERE id_module = 1 AND id_groupe = 1
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Cours existant trouvé avec ID: 1
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Dates calculées: debut=2025-05-19 08:30:00, fin=2025-05-19 11:00:00
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Création d'une nouvelle séance: INSERT INTO seance (date_debut, date_fin, id_cours, id_salle, id_formateur, id_groupe, status) 
+                      VALUES ('2025-05-19 08:30:00', '2025-05-19 11:00:00', 1, 1, 1, 1, 'Planifiée')
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Nouvelle séance créée avec ID: 28
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Ajout à l'emploi du temps: INSERT INTO emploi_du_temps (jour, creneau, id_module, id_formateur, id_salle, id_groupe, id_seance) 
+                VALUES ('Lundi', '8h30-11h00', 1, 1, 1, 1, 28)
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Commit de la transaction
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Séance ajoutée avec succès
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Connexion fermée
+
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Traitement d'une requête GET
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Retour des données d'emploi du temps uniquement
+[18-May-2025 19:18:03 UTC] 2025-05-18 19:18:03 - Connexion fermée
+
+[19-May-2025 07:19:41 UTC] 2025-05-19 07:19:41 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 07:19:41 UTC] 2025-05-19 07:19:41 - Traitement d'une requête GET
+[19-May-2025 07:19:41 UTC] 2025-05-19 07:19:41 - Retour de toutes les données
+[19-May-2025 07:19:41 UTC] 2025-05-19 07:19:41 - Connexion fermée
+
+[19-May-2025 07:43:24 UTC] 2025-05-19 07:43:24 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 07:43:24 UTC] 2025-05-19 07:43:24 - Traitement d'une requête GET
+[19-May-2025 07:43:24 UTC] 2025-05-19 07:43:24 - Retour de toutes les données
+[19-May-2025 07:43:24 UTC] 2025-05-19 07:43:24 - Connexion fermée
+
+[19-May-2025 07:43:28 UTC] 2025-05-19 07:43:28 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 07:43:28 UTC] 2025-05-19 07:43:28 - Traitement d'une requête GET
+[19-May-2025 07:43:28 UTC] 2025-05-19 07:43:28 - Retour de toutes les données
+[19-May-2025 07:43:28 UTC] 2025-05-19 07:43:28 - Connexion fermée
+
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Données POST reçues: {"jour":"Lundi","creneau":"11h00-13h30","id_module":"2","id_groupe":"1","id_formateur":"2","id_salle":"2","frequence":"paire","id":""}
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Traitement d'une requête POST
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Action d'ajout demandée
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Début de la fonction addSeance avec les données: {"jour":"Lundi","creneau":"11h00-13h30","id_module":"2","id_groupe":"1","id_formateur":"2","id_salle":"2","frequence":"paire","id":""}
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Données validées: jour=Lundi, creneau=11h00-13h30, module=2, groupe=1, formateur=2, salle=2
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Début de la transaction
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Vérification du cours existant: SELECT id FROM cours WHERE id_module = 2 AND id_groupe = 1
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Cours existant trouvé avec ID: 5
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Dates calculées: debut=2025-05-19 11:00:00, fin=2025-05-19 13:30:00
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Création d'une nouvelle séance: INSERT INTO seance (date_debut, date_fin, id_cours, id_salle, id_formateur, id_groupe, status) 
+                      VALUES ('2025-05-19 11:00:00', '2025-05-19 13:30:00', 5, 2, 2, 1, 'Planifiée')
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Nouvelle séance créée avec ID: 29
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Ajout à l'emploi du temps: INSERT INTO emploi_du_temps (jour, creneau, id_module, id_formateur, id_salle, id_groupe, id_seance) 
+                VALUES ('Lundi', '11h00-13h30', 2, 2, 2, 1, 29)
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Commit de la transaction
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Séance ajoutée avec succès
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Connexion fermée
+
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Traitement d'une requête GET
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Retour des données d'emploi du temps uniquement
+[19-May-2025 07:43:53 UTC] 2025-05-19 07:43:53 - Connexion fermée
+
+[19-May-2025 11:25:54 UTC] 2025-05-19 11:25:54 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 11:25:54 UTC] 2025-05-19 11:25:54 - Traitement d'une requête GET
+[19-May-2025 11:25:54 UTC] 2025-05-19 11:25:54 - Retour de toutes les données
+[19-May-2025 11:25:54 UTC] 2025-05-19 11:25:54 - Connexion fermée
+
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Données POST reçues: {"id":"30","action":"delete"}
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Traitement d'une requête POST
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Action de suppression demandée pour l'ID: 30
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Début de la fonction deleteSeance avec ID: 30
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Début de la transaction pour suppression
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Récupération de la séance: SELECT id_seance FROM emploi_du_temps WHERE id = 30
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Séance trouvée avec ID: 28
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Suppression de l'emploi du temps: DELETE FROM emploi_du_temps WHERE id = 30
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Vérification des références: SELECT COUNT(*) AS count FROM emploi_du_temps WHERE id_seance = 28
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Suppression de la séance: DELETE FROM seance WHERE id = 28
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Séance supprimée avec succès
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Commit de la transaction pour suppression
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Connexion fermée
+
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Traitement d'une requête GET
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Retour des données d'emploi du temps uniquement
+[19-May-2025 11:26:00 UTC] 2025-05-19 11:26:00 - Connexion fermée
+
+[19-May-2025 15:16:37 UTC] 2025-05-19 15:16:37 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 15:16:37 UTC] 2025-05-19 15:16:37 - Traitement d'une requête GET
+[19-May-2025 15:16:37 UTC] 2025-05-19 15:16:37 - Retour de toutes les données
+[19-May-2025 15:16:37 UTC] 2025-05-19 15:16:37 - Connexion fermée
+
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Nouvelle requête - Méthode: POST, URI: /gestion_presence_QR/back-end/emploi_api.php
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Données POST reçues: {"jour":"Lundi","creneau":"13h30-16h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"1","frequence":"paire","id":""}
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Traitement d'une requête POST
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Action d'ajout demandée
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Début de la fonction addSeance avec les données: {"jour":"Lundi","creneau":"13h30-16h00","id_module":"1","id_groupe":"1","id_formateur":"1","id_salle":"1","frequence":"paire","id":""}
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Données validées: jour=Lundi, creneau=13h30-16h00, module=1, groupe=1, formateur=1, salle=1
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Début de la transaction
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Vérification du cours existant: SELECT id FROM cours WHERE id_module = 1 AND id_groupe = 1
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Cours existant trouvé avec ID: 1
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Dates calculées: debut=2025-05-19 13:30:00, fin=2025-05-19 16:00:00
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Création d'une nouvelle séance: INSERT INTO seance (date_debut, date_fin, id_cours, id_salle, id_formateur, id_groupe, status) 
+                      VALUES ('2025-05-19 13:30:00', '2025-05-19 16:00:00', 1, 1, 1, 1, 'Planifiée')
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Nouvelle séance créée avec ID: 30
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Ajout à l'emploi du temps: INSERT INTO emploi_du_temps (jour, creneau, id_module, id_formateur, id_salle, id_groupe, id_seance) 
+                VALUES ('Lundi', '13h30-16h00', 1, 1, 1, 1, 30)
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Commit de la transaction
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Séance ajoutée avec succès
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Connexion fermée
+
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php?data=emploi
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Traitement d'une requête GET
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Retour des données d'emploi du temps uniquement
+[19-May-2025 15:17:14 UTC] 2025-05-19 15:17:14 - Connexion fermée
+
+[21-Sep-2025 19:20:00 UTC] 2025-09-21 19:20:00 - Nouvelle requête - Méthode: GET, URI: /gestion_presence_QR/back-end/emploi_api.php
+[21-Sep-2025 19:20:00 UTC] 2025-09-21 19:20:00 - Traitement d'une requête GET
+[21-Sep-2025 19:20:00 UTC] 2025-09-21 19:20:00 - Retour de toutes les données
+[21-Sep-2025 19:20:00 UTC] 2025-09-21 19:20:00 - Connexion fermée
+

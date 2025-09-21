@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #99CDD8, #F3C3B2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #657166;
+}
+
+.login-container {
+    background: #FDE8D3;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(101, 113, 102, 0.15);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: #657166;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #657166;
+    font-size: 0.95rem;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-container i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #99CDD8;
+    font-size: 1.1rem;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #CFD6CA;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #99CDD8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(153, 205, 216, 0.25);
+}
+
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: #AAA;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: #657166;
+    border: none;
+    border-radius: 12px;
+    color: #FDE8D3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(101, 113, 102, 0.2);
+}
+
+button[type="submit"]:hover {
+    background: #99CDD8;
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 1.5rem;
+    color: #657166;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    color: #99CDD8;
+}
+
+.error-message {
+    color: #F3C3B2;
+    font-size: 0.875rem;
+    margin-top: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
